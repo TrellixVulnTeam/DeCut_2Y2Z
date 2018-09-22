@@ -25,12 +25,13 @@ SECRET_KEY = 'p$m(5e*fxpv3ncf%(+@j!b0!e+yl322kc^0za_ld2=w4h=f1!8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.1.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'decut',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'delivery.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'decutdb',
+        'USER':'root',
+        'PASSWORD':'4052',
+        'PORT':'3306',
+        'HOST':'127.0.0.1',
     }
 }
 
